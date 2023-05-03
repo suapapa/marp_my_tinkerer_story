@@ -1,10 +1,15 @@
 ---
 marp: true
 theme: uncover
-backgroundColor: #fff
+# backgroundColor: #fff
+class:
+- lead
+- invert
 ---
 
-# **21세기에 순돌이 아빠로 사는 이야기** <!--fit-->
+# **순돌이 아빠는 팅커러**
+
+![bg](./img/background.webp)
 
 2023년 5월
 
@@ -12,13 +17,28 @@ backgroundColor: #fff
 
 ---
 
-# Tinkerer의 정의
+## 발표자 소개
 
-> **손으로 실험하고, 건축하고, 수리하는 것을 즐기는 사람** <!--fit-->
+![bg left:40% 80%](./img/hangulclock.jpg)
+
+* 무난히? 남고 → 공대→ 군대 테크트리를 탄 공돌이
+* 소프트웨어 엔지니어가 직업
+* [한글시계](http://www.youtube.com/watch?v=ApymC7qAVTI) 창시자
 
 ---
 
-# 역사상 유명한 Tinkerer의 예
+## 팅커러
+
+![bg left:40% 80%](./img/braille_printer_hw__0006.jpg)
+
+> 손으로 실험하고, 만들고, 수리하는 것을 즐기는 사람 <!--fit-->
+
+❌ ~~Thinker~~
+✅ Tinkerer
+
+---
+
+## 역사상 유명한 Tinkerer의 예
 
 * 레오나르도 다 빈치
 * 토마스 에디슨
@@ -26,64 +46,110 @@ backgroundColor: #fff
 
 ---
 
-# 어린 시절
-
-궁금증, 탐구, 놀이를 통해 Tinkerer의 시작
-유명한 Tinkerer의 어린 시절 사례 연구 또는 개인적인 경험 (예: 토마스 에디슨의 어린 시절 실험)
+# 발표 내용
 
 ---
 
-# 교육
-
-교육이 Tinkerer의 삶에서 어떤 역할을 하는지 (예: 새로운 기술 습득, 지식 확장, 다른 Tinkerer 만나기)
-Tinkerer가 취할 수 있는 다양한 교육 경로 (예: 정규 교육, 견습, 자기 주도적 학습)
-
----
-
-# 창의적 과정
-
-창의적 과정과 Tinkerer의 삶에서의 중요성 (예: 아이디어 도출, 프로토타이핑, 실험, 개선)
-유명한 Tinkerer와 그들의 창의적 과정 예시 (예: 스티브 잡스의 디자인 과정)
+## 발표자의 Tinkering 예시:
+- ESC pedal
+- SingleSide Drawdio
+- 한글시계
 
 ---
 
-# 도전과 실패
+## 소개할 손재주
 
-도전과 실패가 Tinkerer의 삶에서 어떤 역할을 하는지 (예: 장애물 극복, 실수로부터 배우기)
-도전과 실패에 직면한 유명한 Tinkerer의 개인적인 경험 또는 사례 연구 (예: 제임스 다이슨의 5,127개 실패한 진공 청소기 프로토타입)
-
----
-
-# 유산과 영향력
-
-Tinkerer가 혁신, 발명 및 사회적 영향을 일으킬 수 있는 방법
-영향을 끼친 발명품을 개발한 유명한 Tinkerer의 예 (예: 토마스 에디슨의 전구)
+- PCB 에칭
+- Arduino (MCU + 코딩)
+- 아크릴 레이져 커팅
 
 ---
 
-# 현대 Tinkerer
+## ESC pedal
 
-현대 사회에서 Tinkerer가 가지는 역할과 중요성
-현대 Tinkerer들의 삶에서의 활동과 창의적인 프로젝트들의 예시 (예: 엘론 머스크의 SpaceX, Adafruit Industries의 Limor Fried)
+![bg right:40% 80%](./img/esc_pedal.jpg)
 
----
-
-# Tinkerer가 되기 위한 조건
-
-Tinkerer가 되기 위해서 필요한 조건과 특징 (예: 호기심, 상상력, 끈기, 문제 해결 능력)
-Tinkerer로서 성장하고 발전하기 위한 방법과 리소스 (예: 새로운 기술 학습, 동료들과의 협업, 개방적인 사고 방식)
+발로 밟는 ESC 키
 
 ---
 
-# 결론
 
-Tinkerer의 삶에 대한 요약
-Tinkerer가 혁신과 발명을 이루어내며,
-세상을 더 나은 곳으로 만들 수 있는 가능성
+## 모방은 창조의 어머니
+
+![bg left:40% 80%](./img/usb_enter.png)
 
 ---
 
-# 감사의 인사
+## 재료 수급
 
-발표자의 정보와 연락처 제공
+- 미싱페달
+- 아두이노
+- 오디오잭
+
+---
+
+## 아두이노?
+
+![bg left 70%](./img/arduino_leonardo.svg)
+
+> Arduino는 사용하기 쉬운 하드웨어 및 소프트웨어를 기반으로 하는 오픈 소스 전자 플랫폼입니다.
+
+---
+
+
+
+- 여러 특징을 가진 HW 중 골라 쓸 수 있음
+- 프로토타이핑을 위해 USB기능이 있는 
+[Arduino Leonardo](https://docs.arduino.cc/hardware/leonardo)를 사용
+
+---
+
+아두이노 코드
+
+```cpp
+#include <Keyboard.h>
+
+#define PIN_PEDAL 8
+char lastPress = 0;
+
+void setup() {
+  pinMode(PIN_PEDAL, INPUT_PULLUP);
+
+  Keyboard.begin();
+}
+
+void loop() {
+  if (digitalRead(PIN_PEDAL) == HIGH) {
+    if (lastPress == 1) {
+      lastPress = 0;
+      Keyboard.releaseAll();
+    }
+  } else {
+    if (lastPress == 0) {
+      lastPress = 1;
+      Keyboard.press(KEY_ESC);
+    }
+  }
+  delay(100);
+}
+```
+---
+
+## 오늘의 교훈
+
+**다음의 가치는 측정불가:**
+* 세상에 하나밖에 없는 물건을 만들어 가질 수 있음
+* 만드는 과정의 즐거움
+
+---
+
+## 진짜 교훈
+
+> **왠만하면 사서 쓰는게 낫다**
+
+---
+
+## 감사의 인사
+
+TBU: 발표자의 정보와 연락처 제공
 감사의 인사와 질문을 받을 준비가 되었다는 메시지 전달
