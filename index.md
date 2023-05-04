@@ -104,12 +104,20 @@ Vi에서 매우 자주 사용하는 키
 
 재료
 - 미싱페달
-- 아두이노
+- 아두이노*
 - 오디오잭
 
 ---
 
 ![bg 70%](./img/usbpedal_connect.jpg)
+
+---
+
+## 이러시는 이유가 있을거 아니에요
+
+- 파는게 내가 원하는 것과 조금 다름 
+- 누가 대신 만들어 주지도 않음
+- 내가 할 수 있을 것 같으니까!
 
 ---
 
@@ -172,14 +180,6 @@ Single Side dRawdio:
 
 ---
 
-## 이러시는 이유가 있을거 아니에요
-
-- 해외배송으로 기성품을 사기 힘듦
-- 단면 기판을 기반으로 변종(리믹스)을 만들 수 있음
-- 할 수 있을 것 같으니까!
-
----
-
 ## DIY PCB
 
 * 토너전사 기법을 사용해
@@ -218,7 +218,7 @@ Single Side dRawdio:
 
 ---
 
-![bg right 40% 80%](./img/arcadedeck.jpg)
+![bg right:50% 80%](./img/arcadedeck.jpg)
 
 > 아케이드 버튼을
 사용한 블루투스 
@@ -268,7 +268,7 @@ Single Side dRawdio:
 
 ---
 
-![bg right 80% 80%](./img/hangulclock_proto.jpg)
+![bg right:60% 80%](./img/hangulclock_proto.jpg)
 
 > 5x5 한글 조합의
 단어 시계
@@ -278,11 +278,11 @@ Single Side dRawdio:
 
 ---
 
-![](./img/hangulclock_smoketest.jpg)
+![bg 80%](./img/hangulclock_smoketest.jpg)
 
 ---
 
-![](./img/hangulclock_frontpanel.jpg)
+![bg 80%](./img/hangulclock_frontpanel.jpg)
 
 ---
 
@@ -293,14 +293,14 @@ Single Side dRawdio:
 
 ---
 
-## 아두이노 → SBC
+## 아두이노 → SBC*
 - 인터넷을 통해 시간을
 자동으로 맞출 수 있게 됨
 - C++ → Go 
 개발환경 변경으로 인한
 작업 환경 개선
 
-![bg right 80%](./img/hangulclock_sbc.jpg)
+![bg right:45% 80%](./img/hangulclock_sbc.jpg)
 
 ---
 
@@ -310,12 +310,13 @@ Single Side dRawdio:
 
 ## SBC?
 
-![bg left 40% 80%](./img/raspberrypi.jpg)
+![bg left:60% 80%](./img/raspberrypi.jpg)
 
 > Single Board Computer
 
 - 손바닥 정도 크기의 컴퓨터
-- 라즈베리 파이로 대표됨
+- 라즈베리파이(RaspberryPi)가 대표적
+
 ---
 
 ## 비용
@@ -333,7 +334,7 @@ Single Side dRawdio:
 
 ## 상품화 되어 판매중
 
-![bg left 40% 80%](./img/hansi.avif)
+![bg left:50% 80%](./img/hansi.avif)
 * [원목한글시계 한시](https://ohou.se/productions/460364/selling)
 * 68,000원!
 
@@ -357,6 +358,8 @@ Single Side dRawdio:
 ---
 
 ## 감사의 인사
+
+![bg left:40% 80%](./img/homin_dev.png)
 
 - 발표자의 홈페이지: 
 https://homin.dev
